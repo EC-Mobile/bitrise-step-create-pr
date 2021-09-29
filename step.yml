@@ -18,9 +18,9 @@ description: |
   
   **API deatils can be found here:**
     https://docs.atlassian.com/bitbucket-server/rest/5.16.0/bitbucket-rest.html#idm8287391664
-website: https://github.com/KageRiyuu/bitrise-step-pr-create
-source_code_url: https://github.com/KageRiyuu/bitrise-step-pr-create
-support_url: https://github.com/KageRiyuu/bitrise-step-pr-create/issues
+website: https://github.com/EC-Mobile/bitrise-step-create-pr
+source_code_url: https://github.com/EC-Mobile/bitrise-step-create-pr
+support_url: https://github.com/EC-Mobile/bitrise-step-create-pr/issues
 host_os_tags:
   - osx-10.10
   - ubuntu-16.04
