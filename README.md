@@ -1,11 +1,32 @@
 # PR-Create
 
-add a descriotion
+You can use this step to create PR on your bitbucket repo. 
 
+This step uses BitBucket V1 api.
+
+
+## Required Params and Sample Values
+
+You need to pass these param, all are required:
+
+### Secure Params:
+
+- GIT_ACCESS_TOKEN:                     You can create in your bitbucket account settings.
+
+### Normal Params;
+- GIT_BASE_URL:                                    https://gitpub.mydomain.com
+- GIT_PROJECT:                                      My-MOBILE
+- GIT_REPO:                                            app-ios
+- PR_TITLE:                                             This is a Test PR
+- PR_DESCRIPTION:                               Created from bash script...
+- BRANCH_TO:                                        develop
+- BRANCH_FROM:                                  master
+- TEAM_LEAD_GIT_NAME:                     kage.ryu
 
 ## How to use this Step
 
-Can be run directly with the [bitrise CLI](https://github.com/bitrise-io/bitrise),
+1. Set you access token in bitrise.yml file inside test workflow.
+2. Can be run directly with the [bitrise CLI](https://github.com/bitrise-io/bitrise),
 just `git clone` this repository, `cd` into it's folder in your Terminal/Command Line
 and call `bitrise run test`.
 
