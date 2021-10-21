@@ -192,9 +192,3 @@ inputs:
         **API deatils can be found here:**
           https://docs.atlassian.com/bitbucket-server/rest/5.16.0/bitbucket-rest.html#idm8287391664
       is_required: true
-
-outputs:
-  - PR_CREATE_RESPONSE:
-    opts:
-      title: "API Response"
-      summary: Response form PR create api.

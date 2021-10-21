@@ -51,4 +51,3 @@ response=$(curl --location --request POST "${GIT_BASE_URL}/rest/api/1.0/projects
 }")
 echo $response
 echo "PR creation complete...."
-envman add --key PR_CREATE_RESPONSE --value $response

@@ -7,7 +7,7 @@ app:
   - BITRISE_STEP_ID: pr-create
   - BITRISE_STEP_VERSION: "0.0.1"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/EC-Mobile/bitrise-step-create-pr
-  - MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/EC-Mobile/
+  - MY_STEPLIB_REPO_FORK_GIT_URL: $MY_STEPLIB_REPO_FORK_GIT_URL
 
 workflows:
   test:
@@ -73,26 +73,20 @@ workflows:
       - BITRISE_STEP_VERSION: $BITRISE_STEP_VERSION
       - BITRISE_STEP_GIT_CLONE_URL: $BITRISE_STEP_GIT_CLONE_URL
     description: |-
-      If this is the first time you try to share a Step you should
-      first call: $ bitrise share
-
-      This will print you a guide, and information about how Step sharing
-      works. Please read it at least once!
-
-      As noted in the Step sharing guide you'll have to fork the
-      StepLib you want to share this step into. Once you're done with forking
-      the repository you should set your own fork's git clone URL
-      in the `.bitrise.secrets.yml` file, or here in the `envs` section,
-      as the value of the `MY_STEPLIB_REPO_FORK_GIT_URL` environment.
-
-      You're now ready to share this Step, just make sure that
-      the `BITRISE_STEP_ID` and `BITRISE_STEP_VERSION`
-      environments are set to the desired values!
-
-      To share this Step into a StepLib you can just run: $ bitrise run share-this-step
-
-      Once it finishes the only thing left is to actually create a Pull Request,
-      the way described in the guide printed at the end of the process.
+      Usage sample:
+      - git::https://github.com/EC-Mobile/bitrise-step-create-pr.git@main:
+        title: PR Creator
+        inputs:
+        - GIT_BASE_URL: https://gitpub.rakuten-it.com
+        - GIT_ACCESS_TOKEN: <Token>
+        - GIT_PROJECT: <Project>
+        - GIT_REPO: <Repo>
+        - PR_TITLE: "[Merge Me With Care] - From $BITRISE_GIT_BRANCH -> Develop"
+        - PR_DESCRIPTION: This PR is created from CI !!\\n*Only merge when you see
+            code will not disturbe the develop branch.
+        - BRANCH_TO: develop
+        - BRANCH_FROM: "$BITRISE_GIT_BRANCH"
+        - TEAM_LEAD_GIT_NAME: "$RMS_PR_REVIEWER"
     before_run:
     - audit-this-step
     steps:
