@@ -24,28 +24,6 @@ support_url: https://github.com/EC-Mobile/bitrise-step-create-pr/issues
 host_os_tags:
   - osx-10.10
   - ubuntu-16.04
-
-# If this step should be available only for certain project types
-# just uncomment this `project_type_tags` section and include all the
-# project types supported by the step. If the step can be used for all
-# project types then you can just remove this section.
-# If no `project_type_tags` specified (or specified as an empty array)
-# that means the step can be used for any project type.
-# You can find more information about project type tags in the Step Development Guideline:
-# https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
-#
-# project_type_tags:
-#   - ios
-#   - macos
-#   - android
-#   - xamarin
-#   - react-native
-#   - cordova
-#   - ionic
-
-# Type tags are used for categorizing steps, for easier step discovery in Step Libraries.
-# You can find more information about type tags in the Step Development Guideline:
-# https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
 type_tags:
   - utility
 
@@ -179,10 +157,10 @@ inputs:
           https://docs.atlassian.com/bitbucket-server/rest/5.16.0/bitbucket-rest.html#idm8287391664
       is_required: true
 
-  - TEAM_LEAD_GIT_NAME: 
+  - PR_REVIEWERS: 
     opts:
-      title: Bitbucket User Name 
-      summary: This user will be added as a reviewer in the new PR.
+      title: Bitbucket User Names seperated by comma 
+      summary: These users will be added as a reviewers in the new PR.
       description: |
         This values will be passed as user in reviewers to the following API json body.
         This step uses bitbucket rest api V1.0, it expects your domain installed rest api.
@@ -192,3 +170,11 @@ inputs:
         **API deatils can be found here:**
           https://docs.atlassian.com/bitbucket-server/rest/5.16.0/bitbucket-rest.html#idm8287391664
       is_required: true
+  
+outputs:
+  - PR_LINK:
+    opts:
+      title: Resultant PR URL or null 
+      summary: Resultant PR URL or null 
+      description: |
+        Resultant PR URL or null 
