@@ -143,10 +143,10 @@ inputs:
           https://docs.atlassian.com/bitbucket-server/rest/5.16.0/bitbucket-rest.html#idm8287391664
       is_required: true
       
-  - BRANCH_FROM: 
+  - SOURCE_BRANCHES: 
     opts:
-      title: Branch to Merge
-      summary: This is the source branch that will be merged into destination branch which is BRANCH_TO.
+      title: Branches to Merge
+      summary: Source branchs that will be merged into destination branch which is BRANCH_TO. You can pass multiple source branches separated by space
       description: |
         This values will be passed as fromRef.id to the following API json body.
         This step uses bitbucket rest api V1.0, it expects your domain installed rest api.
