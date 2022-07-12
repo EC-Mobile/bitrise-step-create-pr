@@ -39,7 +39,7 @@ Add this in your bitrise.yml file and replace proper variables:
         - GIT_REPO: <Repo>
         - PR_TITLE: "[Merge Me With Care] - From $BITRISE_GIT_BRANCH -> Develop"
         - PR_DESCRIPTION: This PR is created from CI !!\\n*Only merge when you see
-            code will not disturbe the develop branch.
+            code will not disturb the develop branch.
         - BRANCH_TO: develop
         - BRANCH_FROM: <Variable>
         - PR_REVIEWERS: <Variable>

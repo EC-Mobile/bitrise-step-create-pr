@@ -73,9 +73,9 @@ for source_branch in "${SOURCE_BRANCHES[@]}"; do
 done
 
 # Expose PR links environment variable
-if [ -z "$diff_message" ]; then
+if [ -z "$all_pr_links" ]; then
     echo "No PRs created"
 else
-    #echo -e "diff between ${source_branch} x ${src_branch}: \n${diff_message}"
+    echo -e "\nall_pr_links: ${all_pr_links}"
     envman add --key PR_LINKS --value "$all_pr_links"
 fi
