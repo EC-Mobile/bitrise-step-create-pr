@@ -91,7 +91,7 @@ inputs:
 
   - GIT_REPO: 
     opts:
-      title: Project Name
+      title: Git Repo
       summary: BitBucket repo name, e.g; twitter-ios.
       description: |
         This step uses bitbucket rest api V1.0, it expects your domain installed rest api.
@@ -172,9 +172,9 @@ inputs:
       is_required: true
   
 outputs:
-  - PR_LINK:
+  - PR_LINKS:
     opts:
-      title: Resultant PR URL or null 
-      summary: Resultant PR URL or null 
+      title: Resultant PR URLs or null 
+      summary: Resultant PR URLs or null 
       description: |
-        Resultant PR URL or null 
+        Resultant PR URLs or null 
