@@ -68,6 +68,7 @@ createPR() {
 }
 
 # Parse list of source branches to create PR for them
+echo -e "\nSOURCE_BRANCHES: \n ${SOURCE_BRANCHES[@]}"
 for source_branch in "${SOURCE_BRANCHES[@]}"; do
     createPR $source_branch
 done
@@ -76,6 +77,6 @@ done
 if [ -z "$all_pr_links" ]; then
     echo "No PRs created"
 else
-    echo -e "\nall_pr_links: ${all_pr_links}"
-    envman add --key PR_LINKS --value "$all_pr_links"
+    echo -e "\nall_pr_links: ${all_pr_links[@]}"
+    envman add --key PR_LINKS --value "\`Created PRs\`\n${all_pr_links}"
 fi

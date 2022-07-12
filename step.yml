@@ -146,7 +146,7 @@ inputs:
   - SOURCE_BRANCHES: 
     opts:
       title: Branches to Merge
-      summary: Source branchs that will be merged into destination branch which is BRANCH_TO. You can pass multiple source branches separated by space
+      summary: Source branches that will be merged into destination branch which is BRANCH_TO. You can pass multiple source branches separated by space
       description: |
         This values will be passed as fromRef.id to the following API json body.
         This step uses bitbucket rest api V1.0, it expects your domain installed rest api.
