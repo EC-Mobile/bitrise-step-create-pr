@@ -172,7 +172,7 @@ inputs:
       is_required: true
   
 outputs:
-  - PR_LINKS:
+  - PR_SUMMARY:
     opts:
       title: Resultant PR URLs or null 
       summary: Resultant PR URLs or null 

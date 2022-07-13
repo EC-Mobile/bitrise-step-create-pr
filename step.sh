@@ -2,7 +2,7 @@
 #set -ex
 
 # This will create the pr from branch to the mention branches
-all_pr_links=""
+pr_message_summary=""
 createPR() {
     BRANCH_FROM=$1
     echo "Creating PR on Bitbucket Repo: ${GIT_BASE_URL} -> ${GIT_PROJECT} -> ${GIT_REPO} with details: "
@@ -64,7 +64,7 @@ createPR() {
     PATTERN="$GIT_BASE_URL/projects/$GIT_PROJECT/repos/$GIT_REPO/pull-requests/[0-9]*"
     PR_LINK=($(echo "$response" | grep -Eo -1 "$PATTERN"))
     echo "Created PR: $PR_LINK"
-    all_pr_links+="- $PR_LINK\n"
+    pr_message_summary+="\n*\`${BRANCH_FROM} x ${BRANCH_TO}\`* \n\`\`\`- ${PR_LINK}\`\`\` \n"
 }
 
 # Convert into  branches into array
@@ -76,9 +76,9 @@ for source_branch in "${source_branch_list[@]}"; do
 done
 
 # Expose PR links environment variable
-if [ -z "$all_pr_links" ]; then
+if [ -z "$pr_message_summary" ]; then
     echo "No PRs created"
 else
-    echo -e "\nall_pr_links: ${all_pr_links[@]}"
-    envman add --key PR_LINKS --value "\`Created PRs\`\n${all_pr_links}"
+    echo -e "\npr_message_summary: ${pr_message_summary}"
+    envman add --key PR_SUMMARY --value "${pr_message_summary}"
 fi
