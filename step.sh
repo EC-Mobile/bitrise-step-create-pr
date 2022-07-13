@@ -4,10 +4,10 @@
 # This will create the pr from branch to the mention branches
 pr_message_summary=""
 createPR() {
-    BRANCH_FROM=$1
-    PR_TITLE="$BRANCH_FROM x $BRANCH_TO: ${PR_TITLE}"
+    BRANCH_FROM=$1    
+    UPDATED_PR_TITLE="$BRANCH_FROM x $BRANCH_TO: ${PR_TITLE}"
     echo "Creating PR on Bitbucket Repo: ${GIT_BASE_URL} -> ${GIT_PROJECT} -> ${GIT_REPO} with details: "
-    echo "- Title: ${PR_TITLE}"
+    echo "- Title: ${UPDATED_PR_TITLE}"
     echo "- Description: ${PR_DESCRIPTION}"
     echo "- Source Branch: ${BRANCH_FROM}"
     echo "- Target Branch: ${BRANCH_TO}"
@@ -28,7 +28,7 @@ createPR() {
         --header "Authorization: Bearer ${GIT_ACCESS_TOKEN}" \
         --header 'Content-Type: application/json' \
         --data-binary "{
-    \"title\": \"${PR_TITLE}\",
+    \"title\": \"${UPDATED_PR_TITLE}\",
     \"description\": \"${PR_DESCRIPTION}\",
     \"state\": \"OPEN\",
     \"open\": true,
