@@ -69,7 +69,7 @@ createPR() {
 }
 
 # Convert into  branches into array
-IFS=' ' read -a source_branch_list <<<"${SOURCE_BRANCHES}"
+IFS=' ' read -a source_branch_list <<<"${BRANCH_FROM}"
 # Parse list of source branches to create PR for them
 echo -e "\nsource_branch_list: \n ${source_branch_list[@]}"
 for source_branch in "${source_branch_list[@]}"; do
@@ -81,5 +81,5 @@ if [ -z "$pr_message_summary" ]; then
     echo "No PRs created"
 else
     echo -e "\npr_message_summary: ${pr_message_summary}"
-    envman add --key PR_SUMMARY --value "${pr_message_summary}"
+    envman add --key PR_LINK --value "${pr_message_summary}"
 fi

@@ -143,7 +143,7 @@ inputs:
           https://docs.atlassian.com/bitbucket-server/rest/5.16.0/bitbucket-rest.html#idm8287391664
       is_required: true
       
-  - SOURCE_BRANCHES: 
+  - BRANCH_FROM: 
     opts:
       title: Branches to Merge
       summary: Source branches that will be merged into destination branch which is BRANCH_TO. You can pass multiple source branches separated by space
@@ -172,7 +172,7 @@ inputs:
       is_required: true
   
 outputs:
-  - PR_SUMMARY:
+  - PR_LINK:
     opts:
       title: List of PRs
       summary: Summary of PRs and links
