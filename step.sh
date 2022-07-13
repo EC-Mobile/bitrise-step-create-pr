@@ -67,10 +67,12 @@ createPR() {
     all_pr_links+="$PR_LINK"
 }
 
+# Convert into  branches into array
+IFS=' ' read -a source_branch_list <<<"${SOURCE_BRANCHES}"
 # Parse list of source branches to create PR for them
-echo -e "\nSOURCE_BRANCHES: \n ${SOURCE_BRANCHES[@]}"
-for source_branch in "${SOURCE_BRANCHES[@]}"; do
-    createPR $source_branch
+echo -e "\nsource_branch_list: \n ${source_branch_list[@]}"
+for source_branch in "${source_branch_list[@]}"; do
+    createPR $source_branch || continue
 done
 
 # Expose PR links environment variable
