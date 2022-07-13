@@ -5,6 +5,7 @@
 pr_message_summary=""
 createPR() {
     BRANCH_FROM=$1
+    PR_TITLE="$BRANCH_FROM x $BRANCH_TO: ${PR_TITLE}"
     echo "Creating PR on Bitbucket Repo: ${GIT_BASE_URL} -> ${GIT_PROJECT} -> ${GIT_REPO} with details: "
     echo "- Title: ${PR_TITLE}"
     echo "- Description: ${PR_DESCRIPTION}"
