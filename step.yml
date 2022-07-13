@@ -174,7 +174,7 @@ inputs:
 outputs:
   - PR_SUMMARY:
     opts:
-      title: Resultant PR URLs or null 
-      summary: Resultant PR URLs or null 
+      title: List of PRs
+      summary: Summary of PRs and links
       description: |
-        Resultant PR URLs or null 
+        Summary of PRs and links
