@@ -91,7 +91,7 @@ inputs:
 
   - GIT_REPO: 
     opts:
-      title: Project Name
+      title: Git Repo
       summary: BitBucket repo name, e.g; twitter-ios.
       description: |
         This step uses bitbucket rest api V1.0, it expects your domain installed rest api.
@@ -145,8 +145,8 @@ inputs:
       
   - BRANCH_FROM: 
     opts:
-      title: Branch to Merge
-      summary: This is the source branch that will be merged into destination branch which is BRANCH_TO.
+      title: Branches to Merge
+      summary: Source branches that will be merged into destination branch which is BRANCH_TO. You can pass multiple source branches separated by space
       description: |
         This values will be passed as fromRef.id to the following API json body.
         This step uses bitbucket rest api V1.0, it expects your domain installed rest api.
@@ -174,7 +174,7 @@ inputs:
 outputs:
   - PR_LINK:
     opts:
-      title: Resultant PR URL or null 
-      summary: Resultant PR URL or null 
+      title: List of PRs
+      summary: Summary of PRs and links
       description: |
-        Resultant PR URL or null 
+        Summary of PRs and links
