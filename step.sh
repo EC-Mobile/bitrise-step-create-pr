@@ -65,7 +65,7 @@ createPR() {
     PATTERN="$GIT_BASE_URL/projects/$GIT_PROJECT/repos/$GIT_REPO/pull-requests/[0-9]*"
     PR_LINK=($(echo "$response" | grep -Eo -1 "$PATTERN"))
     echo "Created PR: $PR_LINK"
-    if [ -z "$PR_LINK" ]; then
+    if [ ! -z "$PR_LINK" ]; then
         pr_message_summary+="\n*\`${BRANCH_FROM} -> ${BRANCH_TO}\`* \n\`\`\`- ${PR_LINK}\`\`\` \n"
     fi
 }
