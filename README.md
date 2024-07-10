@@ -30,7 +30,7 @@ You need to pass these param, all are required:
 
 Add this in your bitrise.yml file and replace proper variables:
 ```
-- git::https://github.com/EC-Mobile/bitrise-step-create-pr.git@main:
+- git::https://github.com/EC-Mobile/bitrise-step-create-pr.git@v1.0.0:
         title: PR Creator
         inputs:
         - GIT_BASE_URL: https://git.mydomain.com
