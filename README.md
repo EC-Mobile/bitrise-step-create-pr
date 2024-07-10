@@ -1,6 +1,6 @@
 # PR-Create
 
-You can use this step to create PR on your bitbucket repo. 
+You can use this step to create PR on your bitbucket repo.
 
 This step uses BitBucket V1 api.
 
@@ -30,7 +30,7 @@ You need to pass these param, all are required:
 
 Add this in your bitrise.yml file and replace proper variables:
 ```
-- git::https://github.com/EC-Mobile/bitrise-step-create-pr.git@v1.0.0:
+- git::https://github.com/EC-Mobile/bitrise-step-create-pr.git@1.1.0:
         title: PR Creator
         inputs:
         - GIT_BASE_URL: https://git.mydomain.com
